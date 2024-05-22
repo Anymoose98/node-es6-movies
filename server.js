@@ -33,19 +33,69 @@ class serie extends movieSerie{
     };
 }
 
-// Creazione film e Serie
-const filmSerie = [
-        // Creazione serie televisive
-        serie1 = new serie('Breaking Bad', 2008, 'Drammatico', 4 , 'Serie', 5),
-        serie2 = new serie('Stranger Things', 2016, 'Horror', 3 , 'Serie', 4),
-        serie3 = new serie('The Boys', 2019, 'Drammatico', 5 , 'Serie', 4),
-        serie4 = new serie('how i met your mother', 2005, 'Sitcom', 4 , 'Serie', 9),
 
-        // Creazione film
-        film1 = new movieSerie('Talk to me', 2022, 'Horror', 3 , 'Film'),
-        film2 = new movieSerie('V per vendetta', 2005, 'Azione', 5 , 'Film'),
-        film3 = new movieSerie('Joker', 2019, 'Thriller', 4 , 'Film'),
-        film4 = new movieSerie('Sinister', 2012, 'Horror', 3 , 'Film'),
+const filmsAndSeries = [
+    { 
+        title: "Breaking Bad",
+        year: 2008,
+        genre: "Drammatico",
+        rating: 4,
+        type: "serie",
+        seasons: 5,
+    },
+    { 
+        title: "Stranger Things",
+        year: 2016,
+        genre: "Horror",
+        rating: 3,
+        type: "serie",
+        seasons: 4,
+    },
+    { 
+        title: "The Boys",
+        year: 2019,
+        genre: "Drammatico",
+        rating: 5,
+        type: "serie",
+        seasons: 4,
+    },
+    { 
+        title: "how i met your mother",
+        year: 2005,
+        genre: "Sitcom",
+        rating: 4,
+        type: "serie",
+        seasons: 9,
+    },
+    { 
+        title: "Talk to me",
+        year: 2022,
+        genre: "Horror",
+        rating: 3,
+        type: "film",
+    },
+    { 
+        title: "V per vendetta",
+        year: 2005,
+        genre: "Azione",
+        rating: 5,
+        type: "film",
+    },
+    { 
+        title: "Joker",
+        year: 2019,
+        genre: "Thriller",
+        rating: 4,
+        type: "film",
+    },
+    { 
+        title: "Sinister",
+        year: 2012,
+        genre: "Horror",
+        rating: 3,
+        type: "film",
+    },
+    
 ]
 
 // Filtrare per type e inserire in un array di nome film
@@ -66,13 +116,15 @@ const serieTV = filmSerie.map(item => {
     return series
 })
 
+// Media di un genere
 
 // console.log(`${film}`)
-// console.log(`${serieTV}`)
 
-
-
-
+// Sommo il rating e divido per la lunghezza dell'array precedente
+const horrorFilms = film.filter(item => item.genre === 'Horror');
+const sommaRating = horrorFilms.reduce((acc, item) => acc + item.rating, 0);
+const mediaRating = horrorFilms.length ? sommaRating / horrorFilms.length : 0;
+console.log(`${horrorFilms}`)
 
 
 
