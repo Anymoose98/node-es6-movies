@@ -18,6 +18,13 @@ class movieSerie{
     }
 }
 
+// Estensione Serie
+class serie extends movieSerie{
+    constructor (title, year, genre, rating, type, seasons){
+        super(title, year, genre, rating, type);
+        this.seasons = seasons;
+    }
+}
 
 
 http
