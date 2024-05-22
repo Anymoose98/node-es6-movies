@@ -7,6 +7,19 @@ const http = require("http");
 const host = process.env.host
 const port = process.env.port
 
+// Classe movie&Serie
+class movieSerie{
+    constructor(title, year, genre, rating, type) {
+        this.title = title;
+        this.year = year;
+        this.genre = genre;
+        this.rating = rating;
+        this.type = type;
+    }
+}
+
+
+
 http
     .createServer(function(req, res){
         res.writeHead(200, {
